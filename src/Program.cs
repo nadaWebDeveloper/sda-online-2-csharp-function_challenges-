@@ -31,13 +31,6 @@ namespace FunctionChallenges
             // Uncomment to test the GuessingGame method
             // GuessingGame(); // Expected outcome: User input until the correct number is guessed or user inputs `Quit`
 
-            // Challenge 4: Simple Word Reversal
-            // Console.WriteLine("\nChallenge 4: Simple Word Reversal");
-            // string sentence = "This is the original sentence!";
-            // string reversed = ReverseWords(sentence);
-            // Console.WriteLine(reversed); // Expected outcome: "sihT si eht lanigiro !ecnetnes"
-
-
 
             // Challenge 1: String and Number Processor
             string inputs, result;
@@ -51,7 +44,7 @@ namespace FunctionChallenges
             Console.WriteLine($"\n\tResult is : {result}");
 
             // Challenge 2: Object Swapper
-            string inputObj , result2;
+            string inputObj, result2;
             Console.WriteLine("\t------------------Challenge 2------------------\n");
             Console.WriteLine("\t----------------Object Swapper----------------");
             Console.WriteLine($"\tEnter Two Number Or Two String To Swapper:");
@@ -60,7 +53,16 @@ namespace FunctionChallenges
 
             result2 = SwapObjectClass.SwapObjects(ref inputArray);
             Console.WriteLine($"{result2}");
-            // Console.WriteLine("\t------------------Challenge 2------------------\n");
+
+            // Challenge 4: Simple Word Reversal
+            string inputWord, result4;
+            Console.WriteLine("\t------------------Challenge 4------------------\n");
+            Console.WriteLine("\t-----------------Reverse Words-----------------\n");
+            Console.WriteLine($"\tEnter sentence to Reverse each word in a given sentence:");
+            inputWord = Console.ReadLine() ?? "";
+            result4 = ReverseWordClass.ReverseWords(inputWord);
+            Console.WriteLine($"\tReverse Words: '{result4}'");
+
 
 
 
