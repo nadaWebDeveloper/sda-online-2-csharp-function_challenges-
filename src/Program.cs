@@ -6,14 +6,14 @@ namespace FunctionChallenges
     {
         static void Main(string[] args)
         {
-      
+
             // Challenge 2: Object Swapper
             // Console.WriteLine("\nChallenge 2: Object Swapper");
             // int num1 = 25, num2 = 30;
             // int num 3 = 10, num4 = 30;
             // string str1 = "HelloWorld", str2 = "Programming";
             // string str3 = "Hi", str4 = "Programming";
-                          
+
             //SwapObjects(ref num1, ref num2); // Expected outcome: num1 = 30, num2 = 25  
             //SwapObjects(ref num3, ref num4); // Error: Value must be more than 18
 
@@ -39,17 +39,30 @@ namespace FunctionChallenges
 
 
 
-         // Challenge 1: String and Number Processor
-         string inputs, result;
-         Console.WriteLine("\t------------------Challenge 1------------------\n");
-         Console.WriteLine("\t----------Processor String and Number----------");
-         Console.WriteLine("\tEnter any Number And Any String To Processing:");
-         inputs = Console.ReadLine() ?? "";
+            // Challenge 1: String and Number Processor
+            string inputs, result;
+            Console.WriteLine("\t------------------Challenge 1------------------\n");
+            Console.WriteLine("\t----------Processor String and Number----------");
+            Console.WriteLine("\tEnter any Number And Any String To Processing:");
+            inputs = Console.ReadLine() ?? "";
 
-         string[] sentence = inputs.Split(" ");
-         result = ProcessesStrNum.StringNumberProcessor(sentence);
-         Console.WriteLine($"\n\tResult is : {result}");
-        Console.WriteLine("\t------------------Challenge 1------------------\n");
+            string[] sentence = inputs.Split(" ");
+            result = ProcessesStrNum.StringNumberProcessor(sentence);
+            Console.WriteLine($"\n\tResult is : {result}");
+
+            // Challenge 2: Object Swapper
+            string inputObj , result2;
+            Console.WriteLine("\t------------------Challenge 2------------------\n");
+            Console.WriteLine("\t----------------Object Swapper----------------");
+            Console.WriteLine($"\tEnter Two Number Or Two String To Swapper:");
+            inputObj = Console.ReadLine() ?? "";
+            string[] inputArray = inputObj.Split(" ");
+
+            result2 = SwapObjectClass.SwapObjects(ref inputArray);
+            Console.WriteLine($"{result2}");
+            // Console.WriteLine("\t------------------Challenge 2------------------\n");
+
+
 
 
         }
