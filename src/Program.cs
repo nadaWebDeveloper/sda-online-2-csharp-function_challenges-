@@ -6,33 +6,7 @@ namespace FunctionChallenges
     {
         static void Main(string[] args)
         {
-
-            // Challenge 2: Object Swapper
-            // Console.WriteLine("\nChallenge 2: Object Swapper");
-            // int num1 = 25, num2 = 30;
-            // int num 3 = 10, num4 = 30;
-            // string str1 = "HelloWorld", str2 = "Programming";
-            // string str3 = "Hi", str4 = "Programming";
-
-            //SwapObjects(ref num1, ref num2); // Expected outcome: num1 = 30, num2 = 25  
-            //SwapObjects(ref num3, ref num4); // Error: Value must be more than 18
-
-            //SwapObjects(str1, str2); // Expected outcome: str1 = "Programming", str2 = "HelloWorld"
-            //SwapObjects(str3, str4); // Error: Length must be more than 5
-
-            //SwapObjects(true, false); // Error: Upsupported data type
-            //SwapObjects(ref num1, str1); // Error: Objects must be of same types
-
-            // Console.WriteLine($"Numbers: {num1}, {num2}");
-            // Console.WriteLine($"Strings: {str1}, {str2}");
-
-            // Challenge 3: Guessing Game
-            // Console.WriteLine("\nChallenge 3: Guessing Game");
-            // Uncomment to test the GuessingGame method
-            // GuessingGame(); // Expected outcome: User input until the correct number is guessed or user inputs `Quit`
-
-
-            // Challenge 1: String and Number Processor
+           // Challenge 1: String and Number Processor
             string inputs, result;
             Console.WriteLine("\t------------------Challenge 1------------------\n");
             Console.WriteLine("\t----------Processor String and Number----------");
@@ -45,7 +19,7 @@ namespace FunctionChallenges
 
             // Challenge 2: Object Swapper
             string inputObj, result2;
-            Console.WriteLine("\t------------------Challenge 2------------------\n");
+            Console.WriteLine("\n\n\n\t------------------Challenge 2------------------\n");
             Console.WriteLine("\t----------------Object Swapper----------------");
             Console.WriteLine($"\tEnter Two Number Or Two String To Swapper:");
             inputObj = Console.ReadLine() ?? "";
@@ -54,18 +28,19 @@ namespace FunctionChallenges
             result2 = SwapObjectClass.SwapObjects(ref inputArray);
             Console.WriteLine($"{result2}");
 
+            // Challenge 3: Guessing Game
+            Console.WriteLine("\n\n\n\t------------------Challenge 3------------------\n");
+            Console.WriteLine("\t-----------------Guessing Game-----------------\n");
+            GuessingGameClass.GuessingGame();
+
             // Challenge 4: Simple Word Reversal
             string inputWord, result4;
-            Console.WriteLine("\t------------------Challenge 4------------------\n");
+            Console.WriteLine("\n\n\n\t------------------Challenge 4------------------\n");
             Console.WriteLine("\t-----------------Reverse Words-----------------\n");
-            Console.WriteLine($"\tEnter sentence to Reverse each word in a given sentence:");
+            Console.WriteLine($"\tEnter sentence to Reverse each word in sentence:");
             inputWord = Console.ReadLine() ?? "";
             result4 = ReverseWordClass.ReverseWords(inputWord);
             Console.WriteLine($"\tReverse Words: '{result4}'");
-
-
-
-
 
         }
     }
