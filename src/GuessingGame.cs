@@ -7,32 +7,74 @@ class GuessingGameClass
             Random random = new Random();
             double randomNumber = random.Next(1, 101);
             double guess;
-            Console.WriteLine("I've picked a number between 1 and 100. Try to guess it, 'Quit' to Exit program");
+            bool hintDisplayed = false;
+            Console.WriteLine("I've picked a number between 1 and 100.\nTry to guess it, 'Quit' to Exit program\nMore Hint Write 'Hint\n'");
 
             do
             {
                 Console.Write($"Enter your Guess: ");
-                string input = Console.ReadLine() ?? "";
+                string input = Console.ReadLine() ?? " ";
 
-                 if (input.ToLower() == "quit")
+                if (input.ToLower().Trim() == "quit")
                 {
-                    Console.WriteLine("Exit Program");
+                    Console.WriteLine($"Exit Program & The Number: '{randomNumber}'");
                     break;
                 }
 
-                if (!double.TryParse(input, out guess))
+                if (!double.TryParse(input.Trim(), out guess))
                 {
-                    Console.WriteLine($"Invalid Input, enter number between 1 and 100");
+                    if (input.ToLower().Trim() == "hint")
+                    {
+                        double roundedNumber = Math.Round(randomNumber / 10) * 10;
+                        if (randomNumber > roundedNumber)
+                        {
+                            Console.WriteLine($"\t---- Hint! ----\nThe Number between: '{roundedNumber}' and '{roundedNumber + 10}'\n\t---- Hint! ----{randomNumber}");
+                            continue;
+                        }
+                        Console.WriteLine($"\t---- Hint! ----\nThe Number between: '{roundedNumber - 10}' and '{roundedNumber}'\n\t---- Hint! ----{randomNumber}");
+                        continue;
+
+                    }
+                    Console.WriteLine($"Invalid Input, Enter Number");
                     continue;
                 }
 
+
+                if (guess > 100 || guess < 1)
+                {
+                    Console.WriteLine($"Invalid Range Input, Number between 1 and 100");
+                    continue;
+                }
+
+
+
                 if (guess > randomNumber)
                 {
-                    Console.WriteLine($"Try again , Too Low!");
+                    Console.WriteLine("Try again , Too Low!");
+                    if (!hintDisplayed && 50 > randomNumber)
+                    {
+                        Console.WriteLine($"Hint: it is less than 50!");
+                        hintDisplayed = true;
+                    }
+                    if (!hintDisplayed && 50 < randomNumber)
+                    {
+                        Console.WriteLine($"Hint:! it is more than 50! ");
+                        hintDisplayed = true;
+                    }
                 }
                 else if (guess < randomNumber)
                 {
-                    Console.WriteLine($"Try again , Too High!");
+                    Console.WriteLine("Try again , Too High!");
+                    if (!hintDisplayed && 50 > randomNumber)
+                    {
+                        Console.WriteLine($"Hint:! it is less than 50! ");
+                        hintDisplayed = true;
+                    }
+                    if (!hintDisplayed && 50 < randomNumber)
+                    {
+                        Console.WriteLine($"Hint:! it is more than 50! ");
+                        hintDisplayed = true;
+                    }
                 }
                 else
                 {
