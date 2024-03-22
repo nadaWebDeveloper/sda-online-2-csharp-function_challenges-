@@ -1,14 +1,21 @@
 // Challenge 1: String and Number Processor
 class ProcessesStrNum
 {
-    public static string StringNumberProcessor(string[] inputs)
+    public static string StringNumberProcessor()
     {
         try
         {
             string textString = "";
             double sumNumber = 0;
+            string inputs;
 
-            foreach (string input in inputs)
+
+             Console.WriteLine("\tEnter any Number And Any String To Processing:");
+            inputs = Console.ReadLine() ?? "";
+
+            string[] sentence = inputs.Split(" ");
+
+            foreach (string input in sentence)
             {
                 if (double.TryParse(input, out double number))
                 {
@@ -20,13 +27,15 @@ class ProcessesStrNum
                 }
 
             }
-            return $"Text '{textString.Trim()}'; Sum Of Number '{sumNumber}'";
+            return $"{textString.Trim()}   {sumNumber}";
+            
         }
         catch (Exception error)
         {
             return $"{error.Message}";
 
         }
+        
     }
 
 }

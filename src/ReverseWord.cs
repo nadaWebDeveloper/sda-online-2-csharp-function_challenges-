@@ -1,22 +1,41 @@
 class ReverseWordClass
 {
-    public static string ReverseWords(string text)
+    public static string ReverseWords()
     {
-        string[] inputWords = text.Split(" ");
-
-        for (int i = 0; i < inputWords.Length; i++)
+        try
         {
-            inputWords[i] = ReverseOneWord(inputWords[i]);
+            string inputWord;
+
+            Console.WriteLine($"\tEnter sentence to Reverse each word in sentence:");
+            inputWord = Console.ReadLine() ?? "";
+            string[] inputWords = inputWord.Split(" ");
+
+            for (int i = 0; i < inputWords.Length; i++)
+            {
+                inputWords[i] = ReverseOneWord(inputWords[i]);
+            }
+
+            return string.Join(" ", inputWords).Trim();
         }
-        return string.Join(" ", inputWords).Trim();
+        catch (Exception error)
+        {
+            return $"Error: {error.Message}";
+        }
     }
 
     public static string ReverseOneWord(string word)
     {
-        char[] charArr = word.ToCharArray();
-        Array.Reverse(charArr);
+        try
+        {
+            char[] charArr = word.ToCharArray();
+            Array.Reverse(charArr);
 
-        return new string(charArr);
+            return new string(charArr);
+        }
+        catch (Exception error)
+        {
+            return $"Error: {error.Message}";
+        }
     }
 
 

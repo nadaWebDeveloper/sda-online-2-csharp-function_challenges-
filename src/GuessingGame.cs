@@ -8,7 +8,7 @@ class GuessingGameClass
             double randomNumber = random.Next(1, 101);
             double guess;
             bool hintDisplayed = false;
-            Console.WriteLine("I've picked a number between 1 and 100.\nTry to guess it, 'Quit' to Exit program\nMore Hint Write 'Hint\n'");
+            Console.WriteLine("I've picked a number between 1 and 100.\nTry to guess it, 'Quit' to Exit program\nMore Hint Write 'Hint'\n");
 
             do
             {
@@ -28,10 +28,10 @@ class GuessingGameClass
                         double roundedNumber = Math.Round(randomNumber / 10) * 10;
                         if (randomNumber > roundedNumber)
                         {
-                            Console.WriteLine($"\t---- Hint! ----\nThe Number between: '{roundedNumber}' and '{roundedNumber + 10}'\n\t---- Hint! ----{randomNumber}");
+                            Console.WriteLine($"\t---- Hint! ----\nThe Number between: '{roundedNumber}' and '{roundedNumber + 10}'\n\t---- Hint! ----");
                             continue;
                         }
-                        Console.WriteLine($"\t---- Hint! ----\nThe Number between: '{roundedNumber - 10}' and '{roundedNumber}'\n\t---- Hint! ----{randomNumber}");
+                        Console.WriteLine($"\t---- Hint! ----\nThe Number between: '{roundedNumber - 10}' and '{roundedNumber}'\n\t---- Hint! ----");
                         continue;
 
                     }
@@ -90,7 +90,6 @@ class GuessingGameClass
             Console.WriteLine($"Error: {error.Message}");
 
         }
-
 
     }
 }
