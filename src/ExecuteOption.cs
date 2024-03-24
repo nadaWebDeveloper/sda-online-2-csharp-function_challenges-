@@ -7,11 +7,9 @@ class ExecuteOptionClass{
             case 0:
                 //Challenge 1: String and Number Processor
                 Console.CursorVisible = true;
-                string result;
                 Console.WriteLine("\t------------------Challenge 1------------------\n");
                 Console.WriteLine("\t----------Processor String and Number----------");
-                result = ProcessesStrNum.StringNumberProcessor();
-                Console.WriteLine($"\n\tResult is : {result}");
+               ProcessesStrNum.StringNumberProcessor();
                 Console.ReadKey(true);
 
                 break;

@@ -17,7 +17,7 @@ class GuessingGameClass
 
                 if (input.ToLower().Trim() == "quit")
                 {
-                    Console.WriteLine($"Exit Program & The Number: '{randomNumber}'");
+                    Console.WriteLine($"Exit Program & The Number Is: '{randomNumber}'");
                     break;
                 }
 

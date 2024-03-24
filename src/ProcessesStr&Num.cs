@@ -1,7 +1,7 @@
 // Challenge 1: String and Number Processor
 class ProcessesStrNum
 {
-    public static string StringNumberProcessor()
+    public static void StringNumberProcessor()
     {
         try
         {
@@ -9,33 +9,52 @@ class ProcessesStrNum
             double sumNumber = 0;
             string inputs;
 
-
-             Console.WriteLine("\tEnter any Number And Any String To Processing:");
+            Console.WriteLine("\tEnter any Number And Any String To Processing:");
             inputs = Console.ReadLine() ?? "";
 
             string[] sentence = inputs.Split(" ");
+
+            List<string> strings = new List<string>();
+            List<double> numbers = new List<double>();
 
             foreach (string input in sentence)
             {
                 if (double.TryParse(input, out double number))
                 {
-                    sumNumber += number;
+                    numbers.Add(number);
                 }
                 else
                 {
-                    textString += input + " ";
+                    strings.Add(input);
                 }
-
             }
-            return $"{textString.Trim()}   {sumNumber}";
+
+            Console.Write("\nNumbers: [ ");
+            foreach (double num in numbers)
+            {
+                Console.Write($"{num}, ");
+                sumNumber += num;
+            }
             
+            Console.Write("]");
+            Console.WriteLine();
+
+            Console.Write("Strings: [ ");
+            foreach (string str in strings)
+            {
+                Console.Write($"{str}, ");
+                textString += str + " ";
+            }
+            Console.Write("]");
+
+            Console.WriteLine($"\nThe Result: {textString.Trim()}  {sumNumber}");
         }
         catch (Exception error)
         {
-            return $"{error.Message}";
+            Console.WriteLine($"Error: {error.Message}");
 
         }
-        
+
     }
 
 }
