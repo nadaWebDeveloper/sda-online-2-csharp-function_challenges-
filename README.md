@@ -1,5 +1,9 @@
 # Data type & function challeneges
 
+https://github.com/Integrify-Finland/sda-online-2-csharp-function_challenges/assets/93675583/519f4d7d-bb65-43e0-a571-81554b62989e
+
+<img width="589" alt="‏لقطة الشاشة ١٤٤٥-٠٩-١٣ في ٩ ١٨ ١٦ م" src="https://github.com/Integrify-Finland/sda-online-2-csharp-function_challenges/assets/93675583/500c17c6-2750-404c-bfe5-607915223fbd">
+
 ## Challenge 1: String and Number Processor
 
 - Objective: Create a function that processes a mix of string and number inputs.
@@ -36,3 +40,7 @@
 ## Deadline
 
 Thursday 21st END OF THE DAY
+
+
+
+
